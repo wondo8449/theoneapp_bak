@@ -28,6 +28,9 @@ public class User extends TimeStamped {
     private String phone;
 
     @Column(nullable = false)
+    private String email;
+
+    @Column(nullable = false)
     private String birthday;
 
     @Column(nullable = false)
@@ -51,6 +54,12 @@ public class User extends TimeStamped {
     @Column
     private String teamRole;
 
+    @Column
+    private Long kakaoId;
+
+    @Column
+    private String refreshToken;
+
     @Column(nullable = false)
     private UserRoleEnum userRole;
 
@@ -66,6 +75,29 @@ public class User extends TimeStamped {
         this.Tree = signupRequestDto.getTree();
         this.baptismStatus = signupRequestDto.getBaptismStatus();
         this.userRole = userRole;
+    }
+
+    public User(String email, String encodedPassword, String userName, UserRoleEnum userRoleEnum, Long kakaoId, String userId) {
+        this.password = encodedPassword;
+        this.userName = userName;
+        this.email = email;
+        this.userRole = userRoleEnum;
+        this.kakaoId = kakaoId;
+        this.userId = userId;
+    }
+
+    public void encryptionPassword(String password) {
+        this.password = password;
+    }
+
+    public void updateRefresh(String refresh) {
+        this.refreshToken = refresh;
+    }
+
+    public User kakaoIdUpdate(Long kakaoId) {
+        this.kakaoId = kakaoId;
+
+        return this;
     }
 
 }
