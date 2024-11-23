@@ -3,9 +3,10 @@ Content-Type: application/json
 
 {
   "userId" : "wondo8447",
-  "password" : "dgf9tm",
+  "password" : "dgf9tmASD@",
   "userName" : "김예찬3",
   "phone" : "01099408245",
+  "email" : "wondo8448@naver.com",
   "birthday" : "1997-01-27",
   "address": "효자동",
   "baptismStatus": "세례",
