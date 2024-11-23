@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: theone_back
+  datasource:
+    url: jdbc:postgresql://localhost:5432/theone
+    username: jesuspraise
+    password: dgf9tm
+    hikari:
+      maximum-pool-size: 4
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+jwt:
+  secret:
+    key: ${JWT_SECRET_KEY}
+  access:
+    token:
+      expiration: ${ACCESS_TOKEN_EXPIRATION}
+  refresh:
+    token:
+      expiration: ${REFRESH_TOKEN_EXPIRATION}
+
+coolsms:
+  api:
+    key: "NCSYGWBUDHRDEPOX"
+    secret: "M4XIOCTYTQKEW4ZVD1EHIJSKKTUHVDMM"
+
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    org.springframework.web: DEBUG
+
+server:
+  port: 8090

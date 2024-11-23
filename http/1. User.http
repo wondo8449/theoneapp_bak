@@ -1,12 +1,11 @@
-POST 14.5.86.192:8090/signup
+POST http://14.5.86.192:8090/api/signup
 Content-Type: application/json
 
 {
-  "userId" : "wondo8447",
+  "userId" : "wondo8449",
   "password" : "dgf9tmASD@",
   "userName" : "김예찬3",
   "phone" : "01099408245",
-  "email" : "wondo8448@naver.com",
   "birthday" : "1997-01-27",
   "address": "효자동",
   "baptismStatus": "세례",
@@ -16,10 +15,18 @@ Content-Type: application/json
 }
 
 ###
-POST 14.5.86.192:8090/login
+POST http://14.5.86.192:8090/api/login
 Content-Type: application/json
 
 {
   "userId": "wondo8449",
-  "password": "dgf9tm"
+  "password": "dgf9tmASD@"
+}
+
+###
+POST http://14.5.86.192:8090/api/sendSMS
+Content-Type: application/json
+
+{
+  "phone": "01099408245"
 }

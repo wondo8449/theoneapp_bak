@@ -28,9 +28,6 @@ public class User extends TimeStamped {
     private String phone;
 
     @Column(nullable = false)
-    private String email;
-
-    @Column(nullable = false)
     private String birthday;
 
     @Column(nullable = false)
@@ -72,6 +69,10 @@ public class User extends TimeStamped {
         this.Tree = signupRequestDto.getTree();
         this.baptismStatus = signupRequestDto.getBaptismStatus();
         this.userRole = userRole;
+    }
+
+    public void encryptionPassword(String password) {
+        this.password = password;
     }
 
     public void updateRefresh(String refresh) {

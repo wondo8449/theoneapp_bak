@@ -35,4 +35,15 @@ public class UserRepositoryImpl implements UserRepositoryCustom {
         return fetchOne != null;
     }
 
+    @Override
+    public boolean existsByUserPhone(String phone) {
+        Integer fetchOne = jpaQueryFactory
+                .selectOne()
+                .from(user)
+                .where(user.phone.eq(phone))
+                .fetchFirst();
+
+        return fetchOne != null;
+    }
+
 }
